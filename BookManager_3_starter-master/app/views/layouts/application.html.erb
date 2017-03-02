@@ -1,17 +1,70 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BookManager :: <%= controller.controller_name.capitalize %> - <%= controller.action_name.capitalize %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<div id="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
-    <% end %>
-    <%= yield %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+ <body>
+   <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "BookManager", home_path %></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="has-dropdown">
+            <a href="#">Authors</a>
+            <ul class="dropdown">
+              <li><%= link_to "List Authors", authors_path %></li>
+              <li><%= link_to "Add an Author", new_author_path %></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Books</a>
+            <ul class="dropdown">
+              <li><%= link_to 'Books Under Contract', contracted_books_path %></li>
+            	<li><%= link_to 'Proposed Books', proposed_books_path %></li>
+            	<li><%= link_to 'Add a New Book', new_book_path %></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
   </div>
-</body>
+    <div class="row">
+      <div class="small-8 columns">
+        <!-- MAIN CONTENT GOES HERE -->
+        <%= yield %>
+        <%= javascript_include_tag "application" %>
+      </div>
+
+      <div class="small-1 columns">
+        &nbsp;
+      </div>
+
+      <div class="small-3 columns">
+        <!-- SIDEBAR CONTENT GOES HERE -->
+        <%= render partial: 'partials/quick_links' %>
+      </div>
+    </div>
+
+    <footer>
+      <div class="row">
+        <div class="small-6 large-centered columns">
+          <%= render partial: 'partials/footer' %>
+        </div>
+      </div> 
+    </footer>     
+  </body>
+
 </html>
