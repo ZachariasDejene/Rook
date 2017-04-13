@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'geocoder'
 gem 'simple_form'
+gem 'shoulda-matchers', '= 2.6.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -53,3 +54,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+  gem 'shoulda', '3.5.0'
+  gem 'shoulda-matchers', '2.6.2'
+  gem 'factory_girl_rails', '4.4.1'
+  gem 'mocha', require: false
+  gem 'simplecov', '0.8.2'
+  gem 'single_test', '0.6.0'
+end

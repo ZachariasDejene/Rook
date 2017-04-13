@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  street: 
+  town_id: 
+  latitude: 
+  longitude: 
+
+two:
+  name: 
+  street: 
+  town_id: 
+  latitude: 
+  longitude: 
