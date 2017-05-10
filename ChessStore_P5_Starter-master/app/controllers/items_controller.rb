@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  authorize_resource
 
   def index
     # get info on active items for the big three...
@@ -16,6 +17,7 @@ class ItemsController < ApplicationController
     @price_history = @item.item_prices.chronological.to_a
     # everyone sees similar items in the sidebar
     @similar_items = Item.for_category(@item.category).active.alphabetical.to_a - [@item]
+    #authorize! :show, @price_history
   end
 
   def new
@@ -44,8 +46,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    if User.role.nil?
+      redirect_to login_path, notice: "Login to continue"
+    else
     @item.destroy
     redirect_to items_path, notice: "Successfully removed #{@item.name} from the system."
+    end
   end
 
   private

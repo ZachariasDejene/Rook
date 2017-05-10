@@ -28,8 +28,10 @@ module ChessStoreHelpers
     end
 
     def remove_item_from_cart(item_id)
-      if session[:cart].keys.include?(item_id)
+      if session[:cart].keys.include?(item_id) && session[:cart][item_id] == 1
         session[:cart].delete(item_id)
+      else
+        session[:cart][item_id] -= 1
       end
     end
 
@@ -46,6 +48,8 @@ module ChessStoreHelpers
 
     def get_list_of_items_in_cart
       order_items = Array.new
+      # if session[:cart].nil?
+        # redirect_to(login_path, :notice => 'Login to view your cart!')
       return order_items if session[:cart].empty? # skip if cart empty...
       session[:cart].each do |item_id, quantity|
         info = {item_id: item_id, quantity: quantity}

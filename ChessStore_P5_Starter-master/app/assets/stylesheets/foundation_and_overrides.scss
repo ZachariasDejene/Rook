@@ -1239,6 +1239,8 @@ $topbar-bg: $topbar-bg-color;
 
 #main_content {
   margin-top: 10px;
+  min-height: 100%;
+  padding-bottom: 120px;
   position: relative;
 }
 
@@ -1249,8 +1251,9 @@ $topbar-bg: $topbar-bg-color;
   background-color:#ffffff;
   color: #6493ba;
   text-align: center;
-  position:absolute;
-  bottom:0;
+  bottom: 0;
+  position: fixed;
+  clear: both;
 
 }
 

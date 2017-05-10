@@ -1,5 +1,13 @@
 <div class="contain-to-grid">
   <div class="logo"><%= link_to image_tag('chess_store_title.png'), home_path %></div>
+  <div class="login_img">
+        <% if logged_in? %>
+            <%= link_to 'Logout', logout_path %>
+            <br>[<%= current_user.proper_name %>:<%= current_user.role %>]
+        <% else %>
+          <%= link_to image_tag('chess_login_2.png'), login_path %>
+        <% end %>
+  </div>
   <nav class="top-bar" data-topbar role="navigation"> 
     <section class="top-bar-section">
       <ul class="left">

@@ -64,7 +64,8 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  position: relative; }
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.247059), rgba(0, 0, 0, 0.247059)), url(http://cdn.skim.gs/images/gpctfibnvtcwlj6bp2xr/5-reasons-why-black-kids-should-learn-to-play-chess);  }
 
 a:hover {
   cursor: pointer; }
@@ -123,7 +124,30 @@ select {
 .row {
   margin: 0 auto;
   max-width: 62.5rem;
-  width: 100%; }
+  width: 100%;
+  color: #FFF;
+  padding-top: 30px;
+  font-family:"DIN Alternate"; } 
+  .row h5 {
+    color: #FFF;
+      font-family:"DIN Alternate"; 
+  }
+    .row h4 {
+    color: #FFF;
+      font-family:"DIN Alternate"; 
+  }
+    .row h3 {
+    color: #FFF;
+      font-family:"DIN Alternate"; 
+  }
+    .row h2 {
+    color: #FFF;
+      font-family:"DIN Alternate"; 
+  }
+    .row p {
+    color: #FFF;
+      font-family:"DIN Alternate"; 
+  }
   .row:before, .row:after {
     content: " ";
     display: table; }
@@ -1714,6 +1738,12 @@ meta.foundation-mq-topbar {
     left: 0;
     top: 0;
   }
+  .contain-to-grid .login_img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 15px;
+  }
 
 .fixed {
   position: fixed;
@@ -2094,6 +2124,7 @@ meta.foundation-mq-topbar {
 
   .top-bar-section {
     transition: none 0 0;
+    padding-top: 30px;
     left: 0 !important; }
     .top-bar-section ul {
       display: inline;
@@ -2109,7 +2140,7 @@ meta.foundation-mq-topbar {
       color: #FFFFFF; }
     .top-bar-section li:not(.has-form) a:not(.button) {
       background: #2196f3;
-      line-height: 6.8125rem;
+      line-height: 2.8125rem;
       padding: 0 0.9375rem; }
       .top-bar-section li:not(.has-form) a:not(.button):hover {
         background-color: #555555;
@@ -2133,7 +2164,7 @@ meta.foundation-mq-topbar {
         border-color: rgba(255, 255, 255, 0.4) transparent transparent transparent;
         border-top-style: solid;
         margin-top: -2.5px;
-        top: 3.40625rem; }
+        top: 1.40625rem; }
     .top-bar-section .has-dropdown.moved {
       position: relative; }
       .top-bar-section .has-dropdown.moved > .dropdown {
