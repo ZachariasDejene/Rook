@@ -15,10 +15,11 @@ class OrdersController < ApplicationController
         @order_history = @user.orders.chronoendlogical.to_a
 
     def create
-        
+        @order_item = 
     end
 
     def update
+        @order = Order.
     end
 
     def destroy
