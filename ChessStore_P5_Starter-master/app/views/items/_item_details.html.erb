@@ -15,9 +15,10 @@
   <b>Price</b>: <%= @item.current_price.nil? ? 'N/A' : number_to_currency(@item.current_price) %>
 </p>
 
-<p>
-  <b>Inventory Level</b>: <%= @item.inventory_level.nil? ? 'N/A' : @item.inventory_level %>
-</p>
+<p><%= link_to(new_purchase_path(@item), id: 'idtails', class: 'button tiny radius', remote: true) do %>
+            &nbsp;<%= "Make a Purchase" %>
+            <% end %></p>
+<p><%= link_to 'Sign Up!', new_user_path %></p>
 
 <p>
   <b>Reorder Level</b>: <%= @item.reorder_level.nil? ? 'N/A' : @item.reorder_level %>

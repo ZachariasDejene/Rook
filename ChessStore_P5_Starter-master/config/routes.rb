@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resources :item_prices
   resources :sessions
 
+  resources :orders
+  #resources :order_items
+  resources :schools
+
+
   # Semi-static page routes
   get 'home' => 'home#home', as: :home
   get 'about' => 'home#about', as: :about
@@ -22,8 +27,13 @@ Rails.application.routes.draw do
   get 'cart/add/:id' => 'carts#add_to_cart', :as => :add_to_cart
   get 'cart/remove/:id' => 'carts#remove_from_cart', :as => :remove_from_cart
   get 'cart/dump_cart' => 'carts#dump_cart', as: :dump_cart
-  get 'cart/checkout' => 'cart#checkout', as: :checkout
+  get 'cart/checkout' => 'carts#checkout', as: :checkout
+
+  get 'order_items/ship/:id' => 'order_items#is_shipped', as: :ship
+  get 'order_items' => 'order_items#is_shipped', as: :index
   
+  get 'user/index' => 'users#index', as: :all_users
+
   # Set the root url
   root :to => 'home#home'  
 

@@ -31,7 +31,7 @@ class CreditCard
     expiration_year < today.year or (expiration_year == today.year and expiration_month < today.month)
   end
   
-  def valid?
-    !expired? and !type.nil?
-  end
+  # def valid?
+  #   !expired? and !type.nil?
+  # end
 end
