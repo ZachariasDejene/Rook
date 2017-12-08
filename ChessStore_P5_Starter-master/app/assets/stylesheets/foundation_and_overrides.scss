@@ -51,7 +51,7 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+// $primary-color: #FFFFFF;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -1248,13 +1248,13 @@ $topbar-bg: $topbar-bg-color;
   margin-top: 15px;
   padding-top: 0px;
   padding-bottom: 15px;
-  background-color:#ffffff;
+  background-color: rgba(0,0,0,0.5);
   color: #6493ba;
   text-align: center;
   bottom: 0;
   position: fixed;
   clear: both;
-
+  width: 100%;
 }
 
 #footer a {
@@ -1263,8 +1263,8 @@ $topbar-bg: $topbar-bg-color;
 }
 
 #footer a:hover {
-  color: #7f9eb8;
-  text-decoration: underline;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 #copy {
@@ -1326,11 +1326,11 @@ select.date { width: 90px; }
 select.time { width: 90px; }
 
 .form-actions {
-  background-color: #FFF;
+  background-color: none;
 }
 
 .form-actions-min {
-  background-color: #FFF;
+  background-color: none;
   border: none;
   padding: 10px 10px 10px 180px;
   /*padding-left: 180px;*/

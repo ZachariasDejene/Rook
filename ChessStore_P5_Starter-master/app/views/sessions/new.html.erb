@@ -3,9 +3,9 @@
 <%= form_tag sessions_path do %>
 
 	<div class="control-group">
-    <%= label_tag :email %>
+    <%= label_tag :username %>
     <div class="controls">
-      <%= text_field_tag :email, params[:email] %>
+      <%= text_field_tag :username, params[:username] %>
     </div>
   </div>
 
@@ -16,5 +16,8 @@
     </div>
   </div>
 
-  <div class="actions"><%= submit_tag "Log In" %></div>
+  <div class="actions"><%= submit_tag nil, :class => 'button radius' %>
+      <p><%= link_to 'Sign Up', new_user_path, :class => 'button radius' %></p>
+  </div>
+  <!-- add link to sign up -->
 <% end %>

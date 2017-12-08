@@ -65,7 +65,8 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.247059), rgba(0, 0, 0, 0.247059)), url(http://cdn.skim.gs/images/gpctfibnvtcwlj6bp2xr/5-reasons-why-black-kids-should-learn-to-play-chess);  }
+  background-image: linear-gradient(rgba(0, 0, 0, 0.247059), rgba(0, 0, 0, 0.247059)), url(chessBackDrop.jpeg);  
+  background-attachment: fixed;}
 
 a:hover {
   cursor: pointer; }
@@ -1374,7 +1375,7 @@ form .row textarea.columns {
 
 /* Label Styles */
 label {
-  color: #4d4d4d;
+  color: #FFFFFF;
   cursor: pointer;
   display: block;
   font-size: 0.875rem;
@@ -1743,6 +1744,8 @@ meta.foundation-mq-topbar {
     right: 0;
     top: 0;
     padding-right: 15px;
+    font-family: "DIN Alternate", Helvetica, Roboto, Arial, sans-serif;
+    color: #FFFFFF;
   }
 
 .fixed {
@@ -3766,7 +3769,7 @@ a {
 
 /* Default paragraph styles */
 p {
-  font-family: inherit;
+  font-family: "DIN Alternate", Helvetica, Roboto, Arial, sans-serif;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.6;

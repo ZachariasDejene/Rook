@@ -5,6 +5,7 @@
       &nbsp;Display All <%= model_name.pluralize.capitalize %>
     <% end %>
     &nbsp;&nbsp;
+<% if logged_in? && (current_user.role?(:admin) || current_user.role?(:manager)) %>
     
     <%= link_to(eval("edit_#{model_name}_path(object)"), class: 'button radius') do %>
         &nbsp;<%= "Edit #{opt}" %>
@@ -14,4 +15,5 @@
     <%= link_to(eval("#{model_name}_path(object)"), method: 'delete', data: {confirm: "Are you sure you want to permanently delete #{opt}"}, class: 'button radius alert') do %>
         &nbsp;<%= "Delete #{opt}" %>
     <% end %>
+<% end %>
   </div>

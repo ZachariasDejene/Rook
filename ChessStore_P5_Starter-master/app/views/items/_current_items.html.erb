@@ -5,7 +5,9 @@
       <tr>
         <th width="300">Name</th>
         <th width="100">Price</th>
+        <% if logged_in? && (current_user.role?(:admin) || current_user.role?(:manager)) %>
         <th width="100">Inventory</th>
+        <% end %>
         <th width="100"></th>
       </tr>
     </thead>
@@ -14,7 +16,10 @@
         <tr>
           <td><%= link_to item.name, item_path(item) %></td>
           <td><%= number_to_currency item.current_price %></td>
-          <td><%= item.inventory_level %></td>
+          <td><% if logged_in? && (current_user.role?(:admin) || current_user.role?(:manager)) %>
+                <%= item.inventory_level %>
+              <% end %>
+          </td>
           <td><%= link_to(add_to_cart_path(item.id), class: 'button tiny radius') do %>
             &nbsp;<%= "Add to Cart" %>
             <% end %></td>
